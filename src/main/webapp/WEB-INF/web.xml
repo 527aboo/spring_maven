@@ -9,13 +9,61 @@
  version="3.0"
  >
  
- <jsp-config>
- 	<jsp-property-group>
- 		<url-pattern>*.jsp</url-pattern>
- 		<page-encoding>UTF-8</page-encoding>
- 		<include-prelude>/WEB-INF/include.jsp</include-prelude>
- 	</jsp-property-group>
- </jsp-config>
+ <servlet>
+ 	<servlet-name>app</servlet-name>
+ 	<!-- DispatcherServletクラスをサーブレットコンテナに登録 -->
+	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		
+	<init-param>
+      <param-name>contextConfigLocation</param-name>
+      <param-value>
+        classpath:/META-INF/spring/spring-mvc.xml
+      </param-value>
+    </init-param>
+	
+	<load-on-startup>1</load-on-startup>
+	
+ </servlet>
  
+ 
+ <!-- DispatcherServletを使用してリクエストをハンドリングするパターンを指定 -->
+ <servlet-mapping>
+ 	<servlet-name>app</servlet-name>
+ 	<url-pattern>/</url-pattern>
+ </servlet-mapping>
+ 
+ <!-- サーブレットのリスナクラス -->
+ <listener>
+ 	<listener-class>
+ 		org.springframework.web.context.ContextLoaderListener
+ 	</listener-class>
+ </listener>
+ <!-- サーブレットコンテナのcontextClassパラメータにAnnotationConfigWebApplicationContext指定 -->
+ <context-param>
+ 	<param-name>contextClass</param-name>
+	<param-value>org.springframework.web.context.support.AnnotationConfigWebApplicationContext</param-value>
+ </context-param>
+ 
+ <filter>
+ 	<!-- CaracterEncodingFilterをサーブレットコンテナに登録 -->
+ 	<filter-name>CharacterEncodingFilter</filter-name>
+ 	<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+ 	<!-- 文字エンコーディングを指定する。 -->
+ 	<init-param>
+ 		<param-name>encoding</param-name>
+ 		<param-value>UTF-8</param-value>
+ 	</init-param>
+ 	<!-- パラメータにリクエストパラメータの文字エンコーディングを上書きするか指定する -->
+ 	<init-param>
+ 		<param-name>forceEncoding</param-name>
+ 		<param-value>true</param-value>
+ 	</init-param>
+ </filter>
+ 
+ <!-- CharacterEncodignFilterを適用するURLパターンを指定する -->
+ <filter-mapping>
+ 	<filter-name>CharacterEncodingFilter</filter-name>
+ 	<url-pattern>/*</url-pattern>
+ </filter-mapping>
 
 </web-app>
