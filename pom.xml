@@ -30,11 +30,11 @@
     	<artifactId>javax.servlet-api</artifactId>
     	<scope>provided</scope>
     </dependency>
+
     <dependency>
     	<groupId>org.apache.taglibs</groupId>
     	<artifactId>taglibs-standard-jstlel</artifactId>
     </dependency>
-
 
     <dependency>
       <groupId>junit</groupId>
@@ -42,10 +42,32 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+    
+    <!-- Spring Frameworkの依存モジュールへの依存関係を解決 -->
+    <dependency>
+    	<groupId>org.springframework</groupId>
+    	<artifactId>spring-webmvc</artifactId>
+    </dependency>
+    
+    <!-- Hibernate Validatorを使用する -->
+    <dependency>
+    	<groupId>org.hibernate</groupId>
+    	<artifactId>hibernate-validator</artifactId>
+    </dependency>
+    
+    <!-- ログ出力の依存ライブラリ -->
+    <dependency>
+    	<groupId>org.slf4j</groupId>
+    	<artifactId>jcl-over-slf4j</artifactId>	
+    </dependency>
+    
+    <dependency>
+    	<groupId>ch.qos.logback</groupId>
+    	<artifactId>logback-classic</artifactId>
+    </dependency>
 
 
   </dependencies>
-
 
   <build>
     <finalName>app</finalName>
