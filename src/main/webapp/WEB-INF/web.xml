@@ -12,7 +12,7 @@
  <servlet>
  	<servlet-name>app</servlet-name>
  	<!-- DispatcherServletクラスをサーブレットコンテナに登録 -->
-	<servlet-class>org.springframework.web.servlet.DispatchreServlet</servlet-class>
+	<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 	
 	<!-- contextClassにAnnotaionConfigWebApplicationContextをしてい -->
 	<init-param>

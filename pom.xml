@@ -65,6 +65,12 @@
     	<groupId>ch.qos.logback</groupId>
     	<artifactId>logback-classic</artifactId>
     </dependency>
+    
+    <!-- thymeleaf-spring4ライブラリを指定 -->
+    <dependency>
+    	<groupId>org.thymeleaf</groupId>
+    	<artifactId>thymeleaf-spring4</artifactId>
+    </dependency>
 
 
   </dependencies>
