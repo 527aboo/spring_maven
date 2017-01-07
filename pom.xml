@@ -71,8 +71,19 @@
     	<groupId>org.thymeleaf</groupId>
     	<artifactId>thymeleaf-spring4</artifactId>
     </dependency>
-
-
+    
+    <!-- Hibernate接続設定 -->
+ 
+    <dependency>
+    	<groupId>org.hibernate</groupId>
+    	<artifactId>hibernate-core</artifactId>
+    </dependency>
+    
+    <dependency>
+    	<groupId>org.hibernate</groupId>
+    	<artifactId>hibernate-entitymanager</artifactId>
+    </dependency>
+ 
   </dependencies>
 
   <build>
