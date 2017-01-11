@@ -28,6 +28,5 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/develop/jee-neon-sts/sts/maven/app/src/main/webapp/WEB-INF/lib/postgresql-9.4.1208.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

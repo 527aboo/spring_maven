@@ -49,24 +49,6 @@
     	<artifactId>spring-tx</artifactId>
     </dependency>
     
-    
-    <!-- Hibernate Validatorを使用する -->
-    <dependency>
-    	<groupId>org.hibernate</groupId>
-    	<artifactId>hibernate-validator</artifactId>
-    </dependency>
-    
-    <!-- ログ出力の依存ライブラリ -->
-    <dependency>
-    	<groupId>org.slf4j</groupId>
-    	<artifactId>jcl-over-slf4j</artifactId>	
-    </dependency>
-    
-    <dependency>
-    	<groupId>ch.qos.logback</groupId>
-    	<artifactId>logback-classic</artifactId>
-    </dependency>
-    
     <!-- thymeleaf-spring4ライブラリを指定 -->
     <dependency>
     	<groupId>org.thymeleaf</groupId>
@@ -78,14 +60,13 @@
 	    <artifactId>thymeleaf-extras-java8time</artifactId>
 	    <version>2.1.0.RELEASE</version>
  	</dependency>
-    
-    <!-- jpa -->
+ 
+    <!-- jdbc -->
     <dependency>
-    	<groupId>org.springframework.data</groupId>
-    	<artifactId>spring-data-jpa</artifactId>
-    	<version>1.10.6.RELEASE</version>
+    	<groupId>org.postgresql</groupId>
+    	<artifactId>postgresql</artifactId>
     </dependency>
-    
+        
     <!-- Hibernate -->
     <dependency>
     	<groupId>org.springframework</groupId>
@@ -102,11 +83,30 @@
     	<artifactId>hibernate-entitymanager</artifactId>
     </dependency>
 
-    <!-- jdbc -->
     <dependency>
-    	<groupId>org.postgresql</groupId>
-    	<artifactId>postgresql</artifactId>
+    	<groupId>org.hibernate</groupId>
+    	<artifactId>hibernate-validator</artifactId>
     </dependency>
+    
+    <!-- ログ出力の依存ライブラリ -->
+    <dependency>
+    	<groupId>org.slf4j</groupId>
+    	<artifactId>jcl-over-slf4j</artifactId>	
+    </dependency>
+    
+    <dependency>
+    	<groupId>ch.qos.logback</groupId>
+    	<artifactId>logback-classic</artifactId>
+    </dependency>
+    
+    <!-- jpa -->
+    <dependency>
+    	<groupId>org.springframework.data</groupId>
+    	<artifactId>spring-data-jpa</artifactId>
+    	<version>1.10.6.RELEASE</version>
+    </dependency>
+
+    
   
   </dependencies>
 
