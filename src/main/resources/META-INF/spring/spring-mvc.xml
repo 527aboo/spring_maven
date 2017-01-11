@@ -14,6 +14,8 @@
 	   ">
 
 	<context:component-scan base-package="spring.controller" />	   
+	<context:component-scan base-package="spring.dao" />	   
+	<context:component-scan base-package="spring.service" />	   
 	   
 	<!-- Spring MVCアノテーション利用設定 -->
     <mvc:annotation-driven />
@@ -35,6 +37,6 @@
 		<property name="templateEngine" ref="templateEngine" />
 		<property name="characterEncoding" value="UTF-8" />
 		<property name="order" value="1" />
-	</bean>
+	</bean>	
    
 </beans>

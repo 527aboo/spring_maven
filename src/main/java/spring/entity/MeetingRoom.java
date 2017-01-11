@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="meeting_room")
-public class MeetngRoom {
+public class MeetingRoom {
 	
 	@Id
 	@GeneratedValue

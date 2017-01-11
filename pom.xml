@@ -39,6 +39,17 @@
     	<artifactId>spring-webmvc</artifactId>
     </dependency>
     
+    <dependency>
+    	<groupId>org.springframework</groupId>
+    	<artifactId>spring-context</artifactId>
+    </dependency>
+    
+    <dependency>
+    	<groupId>org.springframework</groupId>
+    	<artifactId>spring-tx</artifactId>
+    </dependency>
+    
+    
     <!-- Hibernate Validatorを使用する -->
     <dependency>
     	<groupId>org.hibernate</groupId>
@@ -77,6 +88,11 @@
     
     <!-- Hibernate -->
     <dependency>
+    	<groupId>org.springframework</groupId>
+    	<artifactId>spring-orm</artifactId>
+    </dependency>
+    
+    <dependency>
     	<groupId>org.hibernate</groupId>
     	<artifactId>hibernate-core</artifactId>
     </dependency>
@@ -85,7 +101,7 @@
     	<groupId>org.hibernate</groupId>
     	<artifactId>hibernate-entitymanager</artifactId>
     </dependency>
-    
+
     <!-- jdbc -->
     <dependency>
     	<groupId>org.postgresql</groupId>
