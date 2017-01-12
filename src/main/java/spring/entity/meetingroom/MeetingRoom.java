@@ -1,4 +1,4 @@
-package spring.entity;
+package spring.entity.meetingroom;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

@@ -1,10 +1,10 @@
-package spring.dao;
+package spring.app.service.meetingroom;
 
 import java.util.List;
 
-import spring.entity.MeetingRoom;
+import spring.entity.meetingroom.MeetingRoom;
 
-public interface MeetingRoomDao {
+public interface MeetingRoomService {
 	
 	void insertMeetingRoom(MeetingRoom meetingRoom);
 	

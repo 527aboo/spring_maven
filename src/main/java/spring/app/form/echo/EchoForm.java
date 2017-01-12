@@ -1,4 +1,4 @@
-package spring.form.echo;
+package spring.app.form.echo;
 
 import java.io.Serializable;
 

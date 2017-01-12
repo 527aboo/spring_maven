@@ -26,6 +26,8 @@
 	</bean>
 	
 	<!-- DB接続 -->
+	<tx:annotation-driven/>
+	
 	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="location" value="classpath:/META-INF/application.properties" />
 	</bean>
@@ -37,8 +39,10 @@
 		<property name="password" value="${spring.datasource.password}" />
 	</bean>
 	
+	<!-- POMで取得したjarのファイルと同じバージョンhibernate「X」にする -->
 	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
+		<property name="packagesToScan" value="spring.entity" />
 		<property name="hibernateProperties">
 			<props>
 				<prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</prop>
@@ -63,7 +67,6 @@
 		<property name="jpaVendorAdapter" ref="jpaVendorAdapter" />
 	</bean>
 	
-	<tx:annotation-driven/>
 	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
 		<property name="entityManagerFactory" ref="entityManagerFactory" />
 	</bean>

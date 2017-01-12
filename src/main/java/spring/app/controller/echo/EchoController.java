@@ -1,4 +1,4 @@
-package spring.controller;
+package spring.app.controller.echo;
 
 import javax.validation.Valid;
 
@@ -8,7 +8,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import spring.form.echo.EchoForm;
+import spring.app.form.echo.EchoForm;
+
 
 
 @Controller

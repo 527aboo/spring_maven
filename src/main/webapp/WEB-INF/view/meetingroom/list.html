@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8" />
+<title>会議室一覧</title>
+</head>
+<body>
+
+<table>
+	<tr><th>ID</th><th>会議室</th></tr>
+	<tr th:each="room : ${meetingRoom}" >
+		<td th:text="${room.roomId}"></td>
+		<td th:text="${room.roomName}"></td>
+	</tr>
+</table>
+
+</body>
+</html>
