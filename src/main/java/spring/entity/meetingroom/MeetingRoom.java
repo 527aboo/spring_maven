@@ -3,6 +3,7 @@ package spring.entity.meetingroom;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -12,18 +13,18 @@ import javax.persistence.Table;
 public class MeetingRoom {
 	
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="room_id")
-	private Integer roomId;
+	private int roomId;
 	
 	@Column(name="room_name")
 	private String roomName;
 
-	public Integer getRoomId() {
+	public int getRoomId() {
 		return roomId;
 	}
 
-	public void setRoomId(Integer roomId) {
+	public void setRoomId(int roomId) {
 		this.roomId = roomId;
 	}
 

@@ -7,8 +7,14 @@ import spring.entity.meetingroom.MeetingRoom;
 
 public interface MeetingRoomDao {
 	
-	void insertMeetingRoom(MeetingRoom meetingRoom);
-	
 	List<MeetingRoom> findAllMettingRoom();
 
+	MeetingRoom findByRoomId(int roomId);
+	
+	void insertMeetingRoom(MeetingRoom meetingRoom);
+	
+	void updateMeetingRoom(MeetingRoom meetingRoom);
+
+	void deleteMeetingRoom(int roomId);
+	
 }

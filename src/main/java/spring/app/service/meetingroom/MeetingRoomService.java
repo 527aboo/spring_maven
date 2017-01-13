@@ -6,8 +6,14 @@ import spring.entity.meetingroom.MeetingRoom;
 
 public interface MeetingRoomService {
 	
-	void insertMeetingRoom(MeetingRoom meetingRoom);
-	
 	List<MeetingRoom> findAllMettingRoom();
+	
+	MeetingRoom findByRoomId(int roomId);
 
+	void insertMeetingRoom(String roomName);
+
+	void updateMeetingRoom(MeetingRoom meetingRoom);
+
+	void deleteMeetingRoom(int roomId);
+		
 }

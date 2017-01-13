@@ -18,13 +18,27 @@ public class MeetingRoomServiceImpl implements MeetingRoomService {
 	@Autowired
 	private MeetingRoomDao meetingRoomDao;
 
-	public void insertMeetingRoom(MeetingRoom meetingRoom) {
-		meetingRoomDao.insertMeetingRoom(meetingRoom);
-	}
-
 	public List<MeetingRoom> findAllMettingRoom() {
 		List<MeetingRoom> list = meetingRoomDao.findAllMettingRoom();
 		return list;
+	}
+
+	public MeetingRoom findByRoomId(int roomId) {
+		return meetingRoomDao.findByRoomId(roomId);
+	}
+
+	public void insertMeetingRoom(String roomName) {
+		MeetingRoom meetingRoom = new MeetingRoom();
+		meetingRoom.setRoomName(roomName);
+		meetingRoomDao.insertMeetingRoom(meetingRoom);
+	}
+	
+	public void updateMeetingRoom(MeetingRoom meetingRoom) {
+		meetingRoomDao.updateMeetingRoom(meetingRoom);
+	}
+	
+	public void deleteMeetingRoom(int roomId) {
+		meetingRoomDao.deleteMeetingRoom(roomId);
 	}
 
 }
