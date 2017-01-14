@@ -5,6 +5,7 @@ import javax.transaction.Transactional;
 
 import org.hibernate.Criteria;
 import org.hibernate.Query;
+import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
@@ -19,7 +20,7 @@ public class MettingRoomDaoImpl extends AbstractDao implements MeetingRoomDao {
 	
 	@SuppressWarnings("unchecked")
 	public List<MeetingRoom> findAllMettingRoom() {
-		Criteria criteria = getSession().createCriteria(MeetingRoom.class);
+		Criteria criteria = getSession().createCriteria(MeetingRoom.class).addOrder(Order.asc("roomId"));
 		return (List<MeetingRoom>) criteria.list();
 	}
 

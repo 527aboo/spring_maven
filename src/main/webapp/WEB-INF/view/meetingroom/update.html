@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8" />
+<title>会議室登録画面</title>
+</head>
+<body>
+	<h2>会議室更新画面</h2>
+	<form action="./list.html" th:action="@{/meetingroom/updateComplete}" th:object="${meetingRoomForm}" method="POST">
+		<table>
+			<tr>
+				<th>会議室ID</th>
+				<td>
+					<input type="hidden" th:value="*{roomId}" th:field="*{roomId}" th:name="roomId" />
+					<p th:text="*{roomId}">1</p>
+				</td>
+			</tr>
+			<tr>
+				<th>会議室名</th>
+				<td>
+					<input type="text" name="roomName" th:field="*{roomName}" th:value="*{roomName}"/><br />
+					<span th:if="${#fields.hasErrors('roomName')}" th:errors="*{roomName}">textのエラーメッセージ</span>
+				</td>
+			</tr>
+		</table>
+			<button type="submit">更新</button>
+		</form>
+			<p><a th:href="@{/meetingroom/list}" href="/app/view/meetingroom/list.html">会議室一覧へ戻る</a></p>
+		
+</body>
+</html>

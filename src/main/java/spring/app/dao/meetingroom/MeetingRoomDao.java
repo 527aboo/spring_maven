@@ -2,6 +2,7 @@ package spring.app.dao.meetingroom;
 
 import java.util.List;
 
+import spring.app.form.meetingroom.MeetingRoomForm;
 import spring.entity.meetingroom.MeetingRoom;
 
 

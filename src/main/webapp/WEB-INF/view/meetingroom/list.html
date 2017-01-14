@@ -8,12 +8,27 @@
 </head>
 <body>
 
+
 <table>
-	<tr><th>ID</th><th>会議室</th></tr>
+	<tr>
+		<th>ID</th>
+		<th>会議室</th>
+		<th>更新</th>
+		<th>削除</th>
+	</tr>
+	
 	<tr th:each="room : ${meetingRoom}" >
 		<td th:text="${room.roomId}"></td>
 		<td th:text="${room.roomName}"></td>
+		<td>
+			<form th:action="@{/meetingroom/update }" method="post" >
+				<input type="hidden" th:value="${room.roomId}" th:name="roomId"/>
+				<input type="submit" value="更新" />
+			</form>
+		</td>
+		<td><form th:action="@{/meetingroom/delete }" method="post" ><input type="submit" value="削除" /></form></td>
 	</tr>
+	
 </table>
 
 <p><a th:href="@{/}" href="/app/index.html">リンク一覧へ</a></p>
