@@ -2,6 +2,8 @@ package spring.app.controller.meetingroom;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,13 +33,13 @@ public class MeetingRoomController {
 	@RequestMapping(path="insert", method = RequestMethod.GET)
 	public String insert(Model model) {
 		InsertMeetingRoomForm form = new InsertMeetingRoomForm();
-		model.addAttribute("form", form);
+		model.addAttribute(form);
 		
 		return "meetingroom/insert";
 	}
 	
 	@RequestMapping(path="insertComplete", method = RequestMethod.POST)
-	public String insertComplete(InsertMeetingRoomForm form, 
+	public String insertComplete(@Valid InsertMeetingRoomForm form, 
 			BindingResult result) {
 		
 		if (result.hasErrors()) {

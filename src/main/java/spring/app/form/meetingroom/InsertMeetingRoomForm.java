@@ -7,7 +7,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 public class InsertMeetingRoomForm implements Serializable {
 	
-	@NotEmpty(message = "{NotEMmpty.insertMeetingRoomForm.roomName}")
+	@NotEmpty(message ="{NotEmpty.insertMeetingRoomForm.roomName}")
 	private String roomName;
 
 	public String getRoomName() {
