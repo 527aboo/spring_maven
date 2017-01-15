@@ -26,7 +26,12 @@
 				<input type="submit" value="更新" />
 			</form>
 		</td>
-		<td><form th:action="@{/meetingroom/delete }" method="post" ><input type="submit" value="削除" /></form></td>
+		<td>
+			<form th:action="@{/meetingroom/deleteComplete }" method="post" >
+				<input type="hidden" th:value="${room.roomId}" th:name="roomId"/>
+				<input type="submit" value="削除"  class="deleteBtn" />
+			</form>
+		</td>
 	</tr>
 	
 </table>
@@ -35,4 +40,7 @@
 <p><a th:href="@{/meetingroom/insert}" href="/app/meetingroom/insert.html">会議室登録画面へ</a></p>
 
 </body>
+<script type="text/javascript" src="../js/lib/jquery/jquery_3_0_0.js" ></script>
+<script type="text/javascript" src="../js/common.js" ></script>
+
 </html>

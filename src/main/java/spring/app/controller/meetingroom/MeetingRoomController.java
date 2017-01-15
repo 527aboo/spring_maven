@@ -78,6 +78,19 @@ public class MeetingRoomController {
 		return "meetingroom/updateComplete";
 	}
 	
+	@RequestMapping(value = "deleteComplete", method = RequestMethod.POST)
+	public String deleteComplete(String roomId) {
+		
+		
+		if (StringUtils.isEmpty(roomId)) {
+			return "meetingroom/list";
+		}
+		
+		Integer id = Integer.parseInt(roomId);
+			
+		meetingRoomService.deleteMeetingRoom(id);
+		return "meetingroom/updateComplete";
+	}
 	
 
 }

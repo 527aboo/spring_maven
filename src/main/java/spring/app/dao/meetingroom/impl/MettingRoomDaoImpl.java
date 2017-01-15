@@ -40,7 +40,8 @@ public class MettingRoomDaoImpl extends AbstractDao implements MeetingRoomDao {
 	}
 
 	public void deleteMeetingRoom(int roomId) {
-		Query query = getSession().createQuery("delete from meetingRoom where roomId = :roomId");
+		// テーブル名とカラムはentityのクラスに定義した名前にする
+		Query query = getSession().createQuery("delete from MeetingRoom where roomId = :roomId");
 		query.setInteger("roomId", roomId);
 		query.executeUpdate();
 	}

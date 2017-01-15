@@ -19,6 +19,8 @@
     <mvc:annotation-driven />
 	
 	<mvc:resources mapping="/resources/**" location="/WEB-INF/resources/" />
+	<mvc:resources mapping="/css/**" location="/WEB-INF/css/" />
+	<mvc:resources mapping="/js/**" location="/WEB-INF/js/" />
 
 	<bean id="templateResolver" class="org.thymeleaf.templateresolver.ServletContextTemplateResolver">
 		<property name="prefix" value="/WEB-INF/view/" />
@@ -36,5 +38,6 @@
 		<property name="characterEncoding" value="UTF-8" />
 		<property name="order" value="1" />
 	</bean>
+	
    
 </beans>
