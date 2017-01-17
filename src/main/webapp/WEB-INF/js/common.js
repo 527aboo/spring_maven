@@ -7,5 +7,16 @@ $(function() {
 			return false;
 		}
 	});
+	
+	$('#sortTable').tablesorter({
+		headers: {
+			2: {
+				sorter: false
+			},
+			3: {
+				sorter: false
+			}
+		}
+	})
 
 });

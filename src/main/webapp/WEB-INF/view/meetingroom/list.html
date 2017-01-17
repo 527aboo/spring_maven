@@ -4,43 +4,62 @@
 
 <head>
 <meta charset="UTF-8" />
+<link rel="stylesheet" type="text/css" href="../css/common.css" />
+
 <title>会議室一覧</title>
 </head>
 <body>
 
-
-<table>
-	<tr>
-		<th>ID</th>
-		<th>会議室</th>
-		<th>更新</th>
-		<th>削除</th>
-	</tr>
+<div id="contentiner">
+	<div id="header">
+		<div id="menu"></div>
+	</div>
+		
+		<div id="contents">
+			<table id="sortTable">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>会議室</th>
+						<th>更新</th>
+						<th>削除</th>
+					</tr>
+				</thead>
+				
+				<tbody>
+					<tr th:each="room : ${meetingRoom}" >
+						<td th:text="${room.roomId}"></td>
+						<td th:text="${room.roomName}"></td>
+						<td>
+							<form th:action="@{/meetingroom/update }" method="post" >
+								<input type="hidden" th:value="${room.roomId}" th:name="roomId"/>
+								<input type="submit" value="更新" />
+							</form>
+						</td>
+						<td>
+							<form th:action="@{/meetingroom/deleteComplete }" method="post" >
+								<input type="hidden" th:value="${room.roomId}" th:name="roomId"/>
+								<input type="submit" value="削除"  class="deleteBtn" />
+							</form>
+						</td>
+					</tr>	
+				</tbody>
+			</table>
+			
+			<p><a th:href="@{/}" href="/app/index.html">リンク一覧へ</a></p>
+			<p><a th:href="@{/meetingroom/insert}" href="/app/meetingroom/insert.html">会議室登録画面へ</a></p>
 	
-	<tr th:each="room : ${meetingRoom}" >
-		<td th:text="${room.roomId}"></td>
-		<td th:text="${room.roomName}"></td>
-		<td>
-			<form th:action="@{/meetingroom/update }" method="post" >
-				<input type="hidden" th:value="${room.roomId}" th:name="roomId"/>
-				<input type="submit" value="更新" />
-			</form>
-		</td>
-		<td>
-			<form th:action="@{/meetingroom/deleteComplete }" method="post" >
-				<input type="hidden" th:value="${room.roomId}" th:name="roomId"/>
-				<input type="submit" value="削除"  class="deleteBtn" />
-			</form>
-		</td>
-	</tr>
+		</div>
 	
-</table>
+	<div id="footer"></div>
 
-<p><a th:href="@{/}" href="/app/index.html">リンク一覧へ</a></p>
-<p><a th:href="@{/meetingroom/insert}" href="/app/meetingroom/insert.html">会議室登録画面へ</a></p>
-
+</div>
 </body>
+<!-- library -->
 <script type="text/javascript" src="../js/lib/jquery/jquery_3_0_0.js" ></script>
+<script type="text/javascript" src="../js/lib/jquery/jquery.tablesorter.js" ></script>
+
+<!-- common -->
 <script type="text/javascript" src="../js/common.js" ></script>
 
 </html>
